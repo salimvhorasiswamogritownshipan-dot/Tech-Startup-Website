@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tech Startup – Home</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#ffffff;
+    color:#003e8a;
+}
+header{
+    width:100%;
+    padding:20px 0;
+    background:#005bde;
+    text-align:center;
+    color:white;
+    font-size:22px;
+    letter-spacing:1px;
+}
+nav{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    background:#e8f1ff;
+    padding:16px;
+    font-size:18px;
+}
+nav a{
+    text-decoration:none;
+    color:#005bde;
+    font-weight:bold;
+}
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+.hero h1{
+    font-size:48px;
+    color:#003e8a;
+}
+.hero p{
+    font-size:20px;
+    color:#005bde;
+    margin-top:10px;
+}
+
+/* Slider */
+.slider{
+    width:90%;
+    max-width:900px;
+    height:420px;
+    margin:40px auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    background:#dce9ff;
+}
+.slides{
+    display:flex;
+    width:300%;
+    height:100%;
+    transition:0.6s;
+}
+.slides img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:#005bde;
+    color:white;
+    padding:12px 18px;
+    border-radius:50%;
+    cursor:pointer;
+    font-size:24px;
+}
+#prev{ left:15px; }
+#next{ right:15px; }
+
+.dots{
+    position:absolute;
+    bottom:12px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+}
+.dot{
+    width:15px;
+    height:15px;
+    background:#8ebaff;
+    border-radius:50%;
+    cursor:pointer;
+}
+.dot.active{
+    background:#005bde;
+}
+
+/* NEW BIG PROFESSIONAL FOOTER */
+.big-footer{
+    background:#032756;
+    color:white;
+    padding:50px 40px;
+    margin-top:60px;
+}
+.footer-container{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:40px;
+    max-width:1200px;
+    margin:auto;
+}
+.footer-column h3{
+    margin-bottom:15px;
+    font-size:18px;
+}
+.footer-column a{
+    display:block;
+    text-decoration:none;
+    color:#d0e2ff;
+    margin:6px 0;
+    font-size:15px;
+}
+.footer-bottom{
+    text-align:center;
+    color:white;
+    padding:20px 0;
+    background:#001a3b;
+    margin-top:30px;
+    font-size:14px;
+}
+</style>
+</head>
+<body>
+
+<header>TECH STARTUP</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="hero">
+    <h1>Build Your Digital Future With Us</h1>
+    <p>Innovation • Technology • Growth</p>
+</div>
+
+<div class="slider">
+    <div class="slides" id="slideBox">
+
+        <img src="" alt="Slide 1">
+        <img src="" alt="Slide 2">
+        <img src="" alt="Slide 3">
+
+    </div>
+
+    <div id="prev" class="arrow">&#10094;</div>
+    <div id="next" class="arrow">&#10095;</div>
+
+    <div class="dots">
+        <div class="dot active" data-i="0"></div>
+        <div class="dot" data-i="1"></div>
+        <div class="dot" data-i="2"></div>
+    </div>
+</div>
+
+<!-- NEW BIG FOOTER -->
+<div class="big-footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>Products</h3>
+            <a href="#">Web Development</a>
+            <a href="#">Mobile Apps</a>
+            <a href="#">AI Integration</a>
+            <a href="#">Cloud Solutions</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <a href="#">Documentation</a>
+            <a href="#">API Reference</a>
+            <a href="#">Blog</a>
+            <a href="#">Tutorials</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Company</h3>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+            <a href="#">Partners</a>
+        </div>
+
+        <div class="footer-column">
+            <h3>Support</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Report Issue</a>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer-bottom">© 2025 Tech Startup. All Rights Reserved.</div>
+
+<script>
+let index = 0;
+const slides = document.getElementById("slideBox");
+const dots = document.querySelectorAll(".dot");
+
+function showSlide(i){
+    index = (i+3) % 3;
+    slides.style.transform = `translateX(-${index*100}%)`;
+    dots.forEach(d => d.classList.remove("active"));
+    dots[index].classList.add("active");
+}
+
+document.getElementById("next").onclick = ()=>showSlide(index+1);
+document.getElementById("prev").onclick = ()=>showSlide(index-1);
+
+dots.forEach(d => {
+    d.onclick = ()=>showSlide(+d.dataset.i);
+});
+
+setInterval(()=>showSlide(index+1), 3000);
+</script>
+
+</body>
+</html>
