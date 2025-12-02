@@ -6,8 +6,8 @@
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f7ff; /* Page background */
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#dbe9ff,#f2f7ff);
     color: #003e8a;
 }
 
@@ -18,9 +18,9 @@ header {
     background: #005bde;
     text-align: center;
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     letter-spacing: 1px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
 }
 
 /* Navigation */
@@ -28,10 +28,10 @@ nav {
     display: flex;
     justify-content: center;
     gap: 40px;
-    background: #e8f1ff;
+    background: #eaf1ff;
     padding: 18px;
     font-size: 18px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 nav a {
     text-decoration: none;
@@ -43,96 +43,115 @@ nav a:hover {
     color: #003e8a;
 }
 
-/* Page Heading */
+/* Page Title */
 h1 {
     text-align: center;
-    font-size: 40px;
-    margin-top: 30px;
+    margin-top: 35px;
+    font-size: 44px;
     color: #003e8a;
+    text-shadow: 0 3px 4px rgba(0,0,0,0.2);
 }
 
-/* Form Container */
-.contact-container {
-    max-width: 750px;
-    margin: 50px auto 80px auto;
+/* WRAPPER */
+.contact-wrapper {
+    max-width: 1200px;
+    margin: 60px auto;
+    display: flex;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* LEFT COMPANY INFO */
+.info-box {
+    flex: 0.7;
+    background: linear-gradient(135deg, #005bde, #0078ff);
+    color: white;
     padding: 40px;
-    background: #ffffff; /* Pure white */
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,91,222,0.2);
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    animation: fadeIn 1s ease-in-out;
+}
+.info-box h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    border-left: 6px solid white;
+    padding-left: 12px;
+}
+.info-box p {
+    font-size: 20px;
+    margin: 20px 0;
 }
 
-/* Form Heading */
+/* ICON STYLE */
+.icon {
+    font-size: 26px;
+    margin-right: 10px;
+    color: #ffeb3b;
+}
+
+/* RIGHT CONTACT FORM */
+.contact-container {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.20);
+    animation: slideIn 1s ease;
+}
 .contact-container h2 {
     text-align: center;
     color: #005bde;
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 30px;
-    letter-spacing: 0.5px;
 }
 
-/* Form Styling */
-.contact-container form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Inputs & Textarea */
-.contact-container input[type="text"],
-.contact-container input[type="email"],
+/* Inputs */
+.contact-container input,
 .contact-container textarea {
+    width: 100%;
     padding: 14px 18px;
     border-radius: 10px;
-    border: 1px solid #c1d0f0;
-    font-size: 16px;
-    transition: 0.4s all;
-    width: 100%;
-    background: #ffffff; /* White background inside input */
+    border: 2px solid #c1d0f0;
+    font-size: 17px;
+    transition: 0.3s;
 }
-.contact-container input[type="text"]:focus,
-.contact-container input[type="email"]:focus,
+.contact-container input:focus,
 .contact-container textarea:focus {
     border-color: #005bde;
-    box-shadow: inset 0 0 8px rgba(0,91,222,0.1), 0 0 12px rgba(0,91,222,0.2);
-    outline: none;
-    background: #ffffff; /* Keep input background white */
-    transform: scale(1.02);
+    transform: scale(1.03);
+    box-shadow: 0 0 14px rgba(0,91,222,0.2);
 }
-
-/* Textarea */
-.contact-container textarea {
+textarea {
     resize: none;
-    min-height: 140px;
+    min-height: 130px;
 }
 
 /* Submit Button */
 .contact-container input[type="submit"] {
-    padding: 15px 20px;
-    border: none;
-    border-radius: 12px;
     background: linear-gradient(45deg, #005bde, #0078ff);
     color: white;
-    font-size: 18px;
+    border: none;
     cursor: pointer;
-    transition: 0.4s all;
-    box-shadow: 0 5px 15px rgba(0,91,222,0.3);
-}
-.contact-container input[type="submit"]:hover {
-    background: linear-gradient(45deg, #0078ff, #005bde);
-    transform: scale(1.05);
+    margin-top: 10px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    transition: 0.4s;
     box-shadow: 0 8px 20px rgba(0,91,222,0.4);
 }
-
-/* Footer */
-footer {
-    text-align: center;
-    background: #005bde;
-    color: white;
-    padding: 22px;
-    margin-top: 50px;
-    font-size: 16px;
-    letter-spacing: 0.5px;
+.contact-container input[type="submit"]:hover {
+    transform: scale(1.08);
 }
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateX(-30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(30px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
 .big-footer{
     background:#0a2540;
     color:#ffffff;
@@ -214,17 +233,37 @@ footer {
 
 <h1>Get In Touch</h1>
 
-<div class="contact-container">
-    <h2>Send Us a Message</h2>
-    <form action="#" method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Subject" required>
-        <textarea name="message" placeholder="Write your message here..." required></textarea>
-        <input type="submit" value="Send Message">
-    </form>
-</div>
+<div class="contact-wrapper">
 
+    <!-- LEFT SIDE COMPANY INFO -->
+    <div class="info-box">
+        <h2>Company Information</h2>
+
+        <p><span class="icon">🏢</span><strong>Tech Startup Pvt. Ltd.</strong></p>
+
+        <p><span class="icon">📧</span> support@techstartup.com</p>
+
+        <p><span class="icon">📞</span> +91 98765 43210</p>
+
+        <p><span class="icon">📍</span> 3rd Floor, Blue Tech Park,<br>
+        SG Highway, Ahmedabad, Gujarat</p>
+
+        <p><span class="icon">⏰</span> Mon – Sat : 10 AM – 7 PM</p>
+    </div>
+
+    <!-- RIGHT SIDE CONTACT FORM -->
+    <div class="contact-container">
+        <h2>Send Us a Message</h2>
+        <form action="#" method="post">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Write your message here..." required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+
+</div>
 <footer class="big-footer">
     <div class="footer-container">
 

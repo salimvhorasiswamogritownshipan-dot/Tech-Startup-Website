@@ -101,39 +101,168 @@ nav a{
     background:#005bde;
 }
 
-/* NEW BIG PROFESSIONAL FOOTER */
 .big-footer{
-    background:#032756;
-    color:white;
-    padding:50px 40px;
+    background:#0a2540;
+    color:#ffffff;
+    padding:60px 40px;
     margin-top:60px;
 }
+
 .footer-container{
     display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap:40px;
+    grid-template-columns:repeat(4, 1fr);
+    gap:50px;
     max-width:1200px;
     margin:auto;
 }
+
 .footer-column h3{
+    font-size:20px;
     margin-bottom:15px;
-    font-size:18px;
+    color:#ffffff;
 }
+
 .footer-column a{
     display:block;
+    color:#a8c2e3;
     text-decoration:none;
-    color:#d0e2ff;
     margin:6px 0;
     font-size:15px;
 }
+
+.footer-column a:hover{
+    color:white;
+}
+
 .footer-bottom{
     text-align:center;
-    color:white;
-    padding:20px 0;
-    background:#001a3b;
-    margin-top:30px;
+    margin-top:50px;
+    border-top:1px solid #1c3a5a;
+    padding-top:25px;
+}
+
+.social span{
+    font-size:22px;
+    margin:0 8px;
+    cursor:pointer;
+}
+
+.social span:hover{
+    opacity:0.7;
+}
+
+.footer-bottom p{
+    margin:10px 0;
+    font-size:14px;
+    color:#a8c2e3;
+}
+
+.footer-bottom .links a{
+    margin:0 10px;
+    color:#a8c2e3;
+    text-decoration:none;
     font-size:14px;
 }
+
+.footer-bottom .links a:hover{
+    color:white;
+}
+/* Container animation */
+.content-box {
+    animation: fadeSlide 1.3s ease forwards;
+    opacity: 0;
+}
+
+/* Heading animation */
+.content-box h2 {
+    animation: textPop 1s ease forwards;
+    opacity: 0;
+}
+
+/* Paragraph animation */
+.content-box p {
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
+    margin-bottom: 15px;
+}
+
+/* Keyframes */
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+}
+
+/* Slider Box */
+.slider{
+    width:100%;
+    height:350px;
+    overflow:hidden;
+    position:relative;
+}
+
+/* Images */
+.slides{
+    width:100%;
+    height:100%;
+    position:absolute;
+    transition:0.5s;
+    display:none;
+}
+
+.slides img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Next & Prev Buttons */
+.prev, .next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:black;
+    color:white;
+    padding:10px 15px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+</style>
 </style>
 </head>
 <body>
@@ -146,93 +275,120 @@ nav a{
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
 </nav>
-
 <div class="hero">
     <h1>Build Your Digital Future With Us</h1>
     <p>Innovation • Technology • Growth</p>
 </div>
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 40px;">
 
-<div class="slider">
-    <div class="slides" id="slideBox">
+    <!-- Left side content -->
+    <div style="width: 50%;">
+        <div class="content-box">
+        <h2>Build Your Digital Future</h2>
+        <p>
+            We help you grow your business with advanced technology,
+            modern solutions and a powerful team of experts. 
+            Our goal is to deliver high performance digital products.
+        </p><h2>Build Your Digital Future With Confidence</h2>
+<p>
+    We create powerful digital solutions designed to help your business grow faster 
+    and stand out in a competitive market. Our team works with a clear vision to build 
+    modern, scalable and high-quality products that match your goals.
+</p>
 
-        <img src="" alt="Slide 1">
-        <img src="" alt="Slide 2">
-        <img src="" alt="Slide 3">
+<p>
+    Every business is unique, and we focus on understanding your needs before crafting 
+    the right solution. Whether you need a website, mobile app, automation system or 
+    a complete digital transformation, we deliver results that make an impact.
+</p>
 
+<p>
+    Our development process is built on trust, innovation and performance.  
+    We ensure each project goes through detailed planning, smart execution, 
+    strong testing and continuous improvement to give you the best experience.  
+</p>
+
+<p>
+    With our skilled team and advanced technologies, we help brands reach the next level.  
+    From strategy and design to development and support, we guide you at every step.
+</p>
+
+<p>
+    Your success is our priority, and we believe in creating long-lasting solutions 
+    that not only look great but work flawlessly. Let’s build something extraordinary.
+</p>
+</div>
     </div>
 
-    <div id="prev" class="arrow">&#10094;</div>
-    <div id="next" class="arrow">&#10095;</div>
-
-    <div class="dots">
-        <div class="dot active" data-i="0"></div>
-        <div class="dot" data-i="1"></div>
-        <div class="dot" data-i="2"></div>
-    </div>
+<!-- Right side image -->
+    <div style="width: 45%; text-align: right;">
+        <img src="image/pic01 (2).jpg" style="width: 100%; border-radius: 10px;">
+    </div>    
 </div>
 
-<!-- NEW BIG FOOTER -->
-<div class="big-footer">
+</div>
+<footer class="big-footer">
     <div class="footer-container">
 
         <div class="footer-column">
-            <h3>Products</h3>
-            <a href="#">Web Development</a>
-            <a href="#">Mobile Apps</a>
-            <a href="#">AI Integration</a>
-            <a href="#">Cloud Solutions</a>
+            <h3>Popular Features</h3>
+            <a href="#">All Products</a>
+            <a href="#">Free Website Builder</a>
+            <a href="#">Email Tracking</a>
+            <a href="#">Marketing Tools</a>
+            <a href="#">Live Chat Software</a>
+            <a href="#">Lead Management</a>
         </div>
 
         <div class="footer-column">
-            <h3>Resources</h3>
-            <a href="#">Documentation</a>
-            <a href="#">API Reference</a>
-            <a href="#">Blog</a>
-            <a href="#">Tutorials</a>
+            <h3>Free Tools</h3>
+            <a href="#">Website Grader</a>
+            <a href="#">Make My Persona</a>
+            <a href="#">Business Templates</a>
+            <a href="#">Generator Tools</a>
+            <a href="#">Blog Ideas Tool</a>
+            <a href="#">Campaign Assistant</a>
         </div>
 
         <div class="footer-column">
             <h3>Company</h3>
             <a href="#">About Us</a>
             <a href="#">Careers</a>
+            <a href="#">Management Team</a>
+            <a href="#">Board of Directors</a>
+            <a href="#">Investor Relations</a>
             <a href="#">Contact</a>
-            <a href="#">Partners</a>
         </div>
 
         <div class="footer-column">
-            <h3>Support</h3>
-            <a href="#">Help Center</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-            <a href="#">Report Issue</a>
+            <h3>Customers</h3>
+            <a href="#">Customer Support</a>
+            <a href="#">Join a User Group</a>
+            <a href="#">Partner Programs</a>
+            <a href="#">Affiliate Program</a>
+            <a href="#">Solutions Directory</a>
         </div>
 
     </div>
-</div>
 
-<div class="footer-bottom">© 2025 Tech Startup. All Rights Reserved.</div>
+    <div class="footer-bottom">
+        <div class="social">
+            <span>🌐</span>
+            <span>📘</span>
+            <span>📸</span>
+            <span>🐦</span>
+            <span>▶️</span>
+            <span>💼</span>
+        </div>
+        <p>© 2025 Tech Startup • All Rights Reserved</p>
 
-<script>
-let index = 0;
-const slides = document.getElementById("slideBox");
-const dots = document.querySelectorAll(".dot");
-
-function showSlide(i){
-    index = (i+3) % 3;
-    slides.style.transform = `translateX(-${index*100}%)`;
-    dots.forEach(d => d.classList.remove("active"));
-    dots[index].classList.add("active");
-}
-
-document.getElementById("next").onclick = ()=>showSlide(index+1);
-document.getElementById("prev").onclick = ()=>showSlide(index-1);
-
-dots.forEach(d => {
-    d.onclick = ()=>showSlide(+d.dataset.i);
-});
-
-setInterval(()=>showSlide(index+1), 3000);
-</script>
-
+        <div class="links">
+            <a href="#">Legal</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Security</a>
+            <a href="#">Cookies</a>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
